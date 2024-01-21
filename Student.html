@@ -1,0 +1,82 @@
+<!--Made by Saif Alhorani -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style_Student.css">
+    <title>Student Portal</title>
+</head>
+
+<body>
+    <header>
+        <h1>Student Portal</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Grades</a>
+        <a href="#">Schedule</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+    <div class="right-sidebar">
+        <h2>Student Menu</h2>
+        <ul>
+            <li><a href="#">Student Marks</a></li>
+            <li><a href="#">Student Info</a></li>
+            <li><a href="#">Student Schedule</a></li>
+        </ul>
+    </div>
+    <div class="big-box">
+        <form id="courseForm">
+            <h2>HNC Requriment</h2>
+            <label>
+                <input type="checkbox" name="courses" value="Math"> website design 
+            </label>
+            <label>
+                <input type="checkbox" name="courses" value="Science"> Networking
+            </label>
+            <label>
+                <input type="checkbox" name="courses" value="History"> Software Development lifecycle
+            </label>
+            <label>
+                <input type="checkbox" name="courses" value="English"> Math for Computing
+            </label>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+        <form id="courseForm">
+            <h2>HND Requriment</h2>
+            <label>
+                <input type="checkbox" name="courses" value="Math"> Advance Programming
+            </label>
+            <label>
+                <input type="checkbox" name="courses" value="Science"> Data Structures
+            </label>
+            <label>
+                <input type="checkbox" name="courses" value="History"> Business Intelligence
+            </label>
+            <label>
+                <input type="checkbox" name="courses" value="English"> Computing Research Project
+            </label>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+    
+
+    <script>
+        function submitForm() {
+            var selectedCourses = document.querySelectorAll('input[name="courses"]:checked');
+
+            if (selectedCourses.length > 0) {
+                var selectedCoursesList = Array.from(selectedCourses).map(course => course.value).join(', ');
+                alert("Success! Selected Courses: " + selectedCoursesList);
+            } else {
+                alert("Please select at least one course.");
+            }
+        }
+    </script>
+</body>
+
+</html>
